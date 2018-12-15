@@ -23,7 +23,7 @@
         </div>
         <div class="nav">
             <ul>
-                <li><a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
+                <li><a href="user.html" class="current"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
                 <li><a href="javascript:;" class="category"><i class="glyphicon glyphicon-th-list"></i><span>分类管理</span></a>
                     <div class="child">
                         <a href="first.html"><span>一级分类</span></a>
@@ -40,14 +40,15 @@
             <a href="#" class="pull-right icon_right"><i class="glyphicon glyphicon-log-out"></i></a>
         </div>
         <div class="container-fluid">
+            <!-- <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li class="active">Data</li>
+                      </ol> -->
             <ol class="breadcrumb mt_20">
                 <li><a href="index.html">管理系统</a></li>
                 <li class="active">首页</li>
             </ol>
-            <div class="echarts">
-                    <div class="echart_left"></div>
-                    <div class="echart_right"></div>
-            </div>
             <!-- Button trigger modal -->
             <!-- 
                 data-toggle切换模态框
@@ -75,17 +76,13 @@
                 </div>
             </div>
         </div>
-      
     </div>
-
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
     <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
-    <script src="lib/echarts/echarts.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/isLogin.js"></script>
-    <script src="js/index.js"></script>
 
 </body>
 

@@ -1,0 +1,167 @@
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    /* display: block; */
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lt_aside {
+    width: 180px;
+    height: 100%;
+
+    background-color: #222d32;
+    /* z-index: 999; */
+    /* padding-top: 50px; */
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    transition: all 1s;
+}
+
+.lt_aside.hidemenu {
+    left: -180px;
+}
+
+.lt_aside .lt_title {
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #367FA9;
+    text-align: center;
+    /* position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999; */
+}
+
+.lt_aside .lt_title a {
+    /* display: block; */
+    font-size: 24px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+
+}
+
+.lt_aside .user {
+    padding-top: 30px;
+    height: 180px;
+}
+
+.lt_aside .user img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.lt_aside .user p {
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.lt_aside .nav li a {
+    height: 40px;
+    padding-left: 40px;
+    line-height: 40px;
+    /* font-size: 18px; */
+    color: #fff;
+    width: 180px;
+    display: block;
+    border-left: 3px solid transparent;
+}
+
+.lt_aside .nav li a.active {
+    border-left: 3px solid #006699;
+    background-color: #1D1F21;
+}
+
+.lt_aside .nav li a i {
+    padding-right: 6px;
+}
+
+.lt_aside .nav .child a {
+    padding-left: 60px;
+    /* display: block; */
+}
+
+.lt_main {
+    padding-left: 180px;
+    padding-top: 50px;
+    /* height: 2000px; */
+    transition: all 1s;
+}
+
+.lt_main.hidemenu {
+    padding-left: 0;
+}
+
+.lt_topbar {
+    width: 100%;
+    height: 50px;
+    background-color: #3C8DBC;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-left: 180px;
+    transition: all 1s;
+}
+
+.lt_topbar.hidemenu {
+    padding-left: 0
+}
+
+.lt_topbar a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.breadcrumb {
+    margin-top: 20px;
+}
+
+.red {
+    color: #A94442;
+}
+
+/* .lt_content {
+    width: 100%;
+    height: 100%;
+    /* background-color: firebrick; 
+} */
+
+.echarts_left,
+.echarts_right {
+    width: 45%;
+    height: 400px;
+}
+
+.echarts_left {
+    /* background-color: yellowgreen; */
+    float: left;
+}
+
+.echarts_right {
+    /* background-color: green; */
+    float: right;
+}

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../back/lib/bootstrap-validator/css/bootstrapValidator.css">
     <link rel="stylesheet" href="lib/nprogress/nprogress.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/user.css">
 </head>
 
 <body>
@@ -26,7 +27,7 @@
         </div>
         <div class="nav">
             <ul>
-                <li><a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
+                <li><a href="user.html" class="active"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
                 <li><a href="javascript:;" class="category"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
                     <div class="child" style="display: none">
                         <a href="first.html">一级菜单</a>
@@ -44,16 +45,33 @@
         </div>
         <div class="container-fluid">
             <ol class="breadcrumb">
-                <li><a href="#">管理系统</a></li>
-                <li class="active">首页</li>
+                <li><a href="index.html">管理系统</a></li>
+                <li class="active">用户管理</li>
             </ol>
             <div class="lt_content">
-                <div class="echarts_left"></div>
-                <div class="echarts_right"></div>
-
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th width="10%">序号</th>
+                            <th width="20%">用户名</th>
+                            <th width="30%">手机号</th>
+                            <th width="20%">状态</th>
+                            <th width="20%">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>itcast</td>
+                            <td>15757771111</td>
+                            <td>禁用</td>
+                            <td>
+                                <button class="btn btn-danger">禁用</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
-
         </div>
         <!-- Button trigger modal -->
         <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#logouModal">
@@ -79,14 +97,24 @@
         </div>
     </div>
     <!-- 公共部分结束 -->
+    <script type="text/html" id="userlist">
+        <tr>
+                <td>1</td>
+                <td>itcast</td>
+                <td>15757771111</td>
+                <td>禁用</td>
+                <td>
+                    <button class="btn btn-danger">禁用</button>
+                </td>
+            </tr>
+    </script>
     <script src="../back/lib/jquery/jquery.min.js"></script>
     <script src="../back/lib/bootstrap/js/bootstrap.js"></script>
     <script src="../back/lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
-    <script src="lib/echarts/echarts.min.js"></script>
     <script src="js/isLogin.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/user.js"></script>
 </body>
 
 </html>
