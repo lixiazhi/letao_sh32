@@ -65,7 +65,7 @@ $(function () {
         // 阻止默认提交
         e.preventDefault();
         $.ajax({
-            type: 'POST',
+            type: 'post',
             url: '/employee/employeeLogin',
             // url: 'localhost:3000/employee/employeeLogin',
             dataType: 'json',
