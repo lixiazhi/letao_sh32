@@ -142,7 +142,16 @@ ul {
  */
 .echarts .echart_left,
 .echarts .echart_right {
-    width: 48%;
+    width: 45%;
     height: 400px;
+}
 
+.echarts .echart_left {
+    float: left;
+    /* background-color: yellow; */
+}
+
+.echarts .echart_right {
+    float: right;
+    /* background-color: green; */
 }

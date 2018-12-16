@@ -6,7 +6,7 @@
             type: 'get',
             dataType: 'json',
             success: function (info) {
-                console.log(info);
+                // console.log(info);
                 if (info.error == 400) {
                     // 拦截到登录页
                     location.href = "login.html"
