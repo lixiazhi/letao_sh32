@@ -59,8 +59,8 @@
                             <th width="20%">操作</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
+                    <tbody class="tb">
+                        <!-- <tr>
                             <td>1</td>
                             <td>itcast</td>
                             <td>15757771111</td>
@@ -68,9 +68,13 @@
                             <td>
                                 <button class="btn btn-danger">禁用</button>
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
+
+                <div class="table_paginators" style="text-align: right">
+                    <ul id="useroption"></ul>
+                </div>
             </div>
         </div>
         <!-- Button trigger modal -->
@@ -86,11 +90,11 @@
                         <h4 class="modal-title" id="logoutModalLabel">温馨提示</h4>
                     </div>
                     <div class="modal-body">
-                        <p class="red"> <i class="glyphicon glyphicon-info-sign"></i><span>您确定要退出后台管理系统吗？</span></p>
+                        <p class="red"> <i class="glyphicon glyphicon-info-sign"></i><span>您确定要执行此操作吗？</span></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary" id="logout">退出</button>
+                        <button type="button" class="btn btn-primary" id="confirm">确定</button>
                     </div>
                 </div>
             </div>
@@ -98,23 +102,60 @@
     </div>
     <!-- 公共部分结束 -->
     <script type="text/html" id="userlist">
+        {{each list v i}}
         <tr>
-                <td>1</td>
-                <td>itcast</td>
-                <td>15757771111</td>
-                <td>禁用</td>
-                <td>
+                <td>{{v.id}}</td>
+                <!-- <td>{{ (page-1)*size + i+1 }}</td> -->
+                <td>{{v.username}}</td>
+                <td>{{v.mobile}}</td>
+                <td>{{state[v.isDelete]}}</td>
+                <td data-id="{{v.id}}">
+                    {{if v.isDelete == '1'}}
                     <button class="btn btn-danger">禁用</button>
+                    {{/if}}
+                    {{if v.isDelete == '0'}}
+                    <button class="btn btn-success">启用</button>
+                    {{/if}}
                 </td>
             </tr>
+            {{/each}}
+
+<!-- 
+            {{ each rows v i }}
+            <tr>
+              <td>{{ (page-1)*size + i+1 }}</td>
+              <td>{{ v.username }}</td>
+              <td>{{ v.mobile }}</td>
+              <td>{{ v.isDelete === 1 ? "正常" : "禁用" }}</td>
+              <td data-id="{{ v.id }}">
+                {{ if v.isDelete === 1 }}
+                  <button class="btn btn-danger">禁用</button>
+                {{ else }}
+                  <button class="btn btn-success">启用</button>
+                {{ /if }}
+              </td>
+            </tr>
+          {{ /each }} -->
     </script>
     <script src="../back/lib/jquery/jquery.min.js"></script>
     <script src="../back/lib/bootstrap/js/bootstrap.js"></script>
     <script src="../back/lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
     <script src="js/isLogin.js"></script>
     <script src="js/common.js"></script>
     <script src="js/user.js"></script>
+
+    <!-- <script type='text/javascript'>
+        var options = {
+            currentPage: 1,
+            totalPages: 3,
+            numberOfPages: 3
+        }
+        $('.pages').bootstrapPaginator(options);
+    </script><span style="font-family:'sans serif, tahoma, verdana, helvetica';"><span style="white-space:normal;">
+        </span></span> -->
 </body>
 
 </html>
