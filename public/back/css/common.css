@@ -155,3 +155,11 @@ ul {
     float: right;
     /* background-color: green; */
 }
+
+
+
+.table.table-bordered th,
+.table.table-bordered tr {
+    text-align: center;
+    vertical-align: middle;
+}
