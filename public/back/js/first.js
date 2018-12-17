@@ -30,5 +30,41 @@ $(function () {
 
         })
     }
+    $('#addBtn').on('click', function () {
+        // alert(1);
+        $('#categoryModal').modal('show');
+    })
+
+    $('#form').bootstrapValidator({
+        fields: {
+            categoryName: {
+                validators: {
+                    notEmpty: {
+                        message: "分类名不能为空"
+                    },
+                }
+            },
+        }
+    })
+
+    $('#form').on('success.form.bv', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'post',
+            url: '/category/addTopCategory',
+            dataType: 'json',
+            data: $('#form').serialize(),
+            success: function (info) {
+                console.log(info);
+                if (info.success) {
+                    $('#categoryModal').modal('hide');
+                    currentPage = 1;
+                    render();
+                    $('#form').data('bootstrapValidator').resetForm(true);
+                }
+            }
+        })
+
+    })
 
 })
