@@ -1,13 +1,7 @@
 $(function () {
-    var state = {
-        1: '正常',
-        0: '禁用'
-    }
-
     var currentPage = 1;
     var pageSize = 5;
     render();
-
     function render() {
         $.ajax({
             url: '/user/queryUser',
@@ -18,12 +12,8 @@ $(function () {
             },
             dataType: 'json',
             success: function (res) {
-                var obj = {
-                    list: res.rows,
-                    state: state
-                }
-                console.log(obj);
-                var htmlstr = template('userlist', obj);
+                console.log(res);
+                var htmlstr = template('userlist', res);
                 $('.lt_content .tb').html(htmlstr);
                 $('#useroption').bootstrapPaginator({
                     bootstrapMajorVersion: 3, //版本
@@ -52,10 +42,6 @@ $(function () {
         // console.log(isDelete);
         $('#logoutModal').modal('show');
         $('#confirm').on('click', function () {
-            // console.log(id, isDelete)
-            // $('#logoutModal').modal('hide');
-            // document.querySelector("#unable").classList.remove('btn-danger');
-            // document.querySelector("#unable").classList.add('btn-success');
             $.ajax({
                 url: '/user/updateUser',
                 type: 'post',

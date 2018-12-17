@@ -60,6 +60,7 @@ $(function () {
                     $('#categoryModal').modal('hide');
                     currentPage = 1;
                     render();
+                    // $('#form').data('bootstrapValidator').resetForm(true);
                     $('#form').data('bootstrapValidator').resetForm(true);
                 }
             }

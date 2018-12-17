@@ -140,6 +140,10 @@ li {
     margin-top: 20px;
 }
 
+.mt_20 {
+    margin-top: 20px;
+}
+
 .red {
     color: #A94442;
 }
@@ -164,4 +168,10 @@ li {
 .echarts_right {
     /* background-color: green; */
     float: right;
+}
+
+.table.table-bordered th,
+.table.table-bordered td {
+    text-align: center;
+    vertical-align: middle;
 }
