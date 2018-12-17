@@ -47,21 +47,83 @@
                 <li><a href="index.html">管理系统</a></li>
                 <li class="active">商品管理</li>
             </ol>
+            <div class="lt_content">
+                <button class="btn btn-default">添加商品</button>
+                <table class="table table-bordered table-hover mt_20">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>商品名称</th>
+                            <th>商品描述</th>
+                            <th>商品库存</th>
+                            <th>商品尺寸</th>
+                            <th>商品状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tb">
+
+                    </tbody>
+                </table>
+                <div class="pull-right">
+                    <ul id="paginator"></ul>
+                </div>
+            </div>
         </div>
         <!-- Button trigger modal -->
         <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#logouModal">
             Launch demo modal
         </button> -->
         <!-- Modal -->
-        <div class="modal fade" id="logoutModal" tabindex="-1">
+        <div class="modal fade" id="productModal" tabindex="-1">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                        <h4 class="modal-title" id="logoutModalLabel">温馨提示</h4>
+                        <h4 class="modal-title" id="logoutModalLabel">添加商品</h4>
                     </div>
                     <div class="modal-body">
-                        <p class="red"> <i class="glyphicon glyphicon-info-sign"></i><span>您确定要退出后台管理系统吗？</span></p>
+                        <form id="form">
+                            <div class="form-group">
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                        data-toggle="dropdown">
+                                        <span class="dropText">请选择二级分类</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">大鱼儿</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="请输入商品名称">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="textarea" class="form-control" id="textarea" rows="3" placeholder="请输入商品描述"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="请输入商品库存">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="请输入商品尺码">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="请输入商品原价">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="请输入商品现价">
+                            </div>
+                            <div class="form-group">
+                                <label for="fileupload" class="btn btn-default">上传图片</label>
+                                <input type="file" name="" id="fileupload" style="display: none">
+                            </div>
+                            <div class="form-group">
+                                <img src="./images/none.png" alt="" width="100">
+                                <img src="./images/none.png" alt="" width="100">
+                                <img src="./images/none.png" alt="" width="100">
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -76,8 +138,26 @@
     <script src="../back/lib/bootstrap/js/bootstrap.js"></script>
     <script src="../back/lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
     <script src="js/isLogin.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/product.js"></script>
+    <script type="text/html" id="productlist">
+        {{each rows v i}}
+        <tr>
+                <td>{{(page-1)*size +i + 1}}</td>
+                <td>{{v.proName}}</td>
+                <td>{{v.proDesc}}</td>
+                <td>{{v.num}}</td>
+                <td>{{v.size}}</td>
+                <td>{{v.statu === 1 ? '已下架' : '在售'}}</td>
+                <td>
+                    <button class="btn btn-danger">下架</button>
+                </td>
+            </tr>
+            {{/each}}
+    </script>
 </body>
 
 </html>

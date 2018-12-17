@@ -61,6 +61,8 @@ $(function () {
         $('.drowText').text($(this).text());
         id = $(this).data('id');
         // console.log(id);
+        $('[name="categoryId"]').val(id);
+        $('#form').data("bootstrapValidator").updateStatus("categoryId", "VALID");
 
 
 
@@ -74,6 +76,8 @@ $(function () {
             var url = imgpic.picAddr;
             // console.log(url);
             $('#imgBox img').attr('src', url);
+            $('[name="brandLogo"]').val(picAddr);
+            $('#form').data("bootstrapValidator").updateStatus("categoryId", "VALID");
         }
     })
 
@@ -86,6 +90,8 @@ $(function () {
         $('#imgBox img').attr('src', './images/none.png');
 
     })
+
+
 
     $('#appendBtn').on('click', function () {
         // alert(1);
@@ -119,5 +125,40 @@ $(function () {
         })
 
     })
+
+    // $('#form').bootstrapValidator({
+    //     feedbackIcons: {
+    //         valid: 'glyphicon glyphicon-ok',
+    //         invalid: 'glyphicon glyphicon-remove',
+    //         validating: 'glyphicon glyphicon-refresh'
+    //     },
+    //     fields: {
+    //         drowText: {
+    //             validators: {
+    //                 notEmpty: {
+    //                     message: "请选择一级分类",
+    //                 }
+
+    //             }
+    //         },
+    //         password: {
+    //             validators: {
+    //                 notEmpty: {
+    //                     message: "密码不能为空",
+    //                 },
+    //                 stringLength: {
+    //                     min: 2,
+    //                     max: 6,
+    //                     message: "密码长度为2-6位"
+    //                 },
+    //                 callback: {
+    //                     message: "密码错误",
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    // })
+
 
 })

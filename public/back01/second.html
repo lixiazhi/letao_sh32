@@ -91,30 +91,35 @@
                             <h4 class="modal-title" id="categoryModalLabel">添加分类</h4>
                         </div>
                         <div class="modal-body">
-                            <div class="form-group">
-                                <div class="dropdown">
-                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        <span class="drowText">请选择一级分类</span>
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <!-- <li><a href="#">555</a></li> -->
-                                    </ul>
+                            <form id="form">
+                                <div class="form-group">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="drowText">请选择一级分类</span>
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <!-- <li><a href="#">555</a></li> -->
+                                        </ul>
+                                    </div>
+                                    <input type="hidden" name="categoryId">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control inps" placeholder="请输入二级分类">
-                            </div>
-                            <div class="form-group">
-                                <!-- <button class="btn btn-default">上传图片</button> -->
-                                <label for="fileupload" class="btn btn-default">上传图片</label>
-                                <input type="file" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic"
-                                    style="display: none">
-                            </div>
-                            <div class="form-group" id="imgBox">
-                                <img src="./images/none.png" alt="" style="width: 100px; height: 100px;">
-                            </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control inps" placeholder="请输入二级分类" name="brandName">
+                                </div>
+                                <div class="form-group">
+                                    <!-- <button class="btn btn-default">上传图片</button> -->
+                                    <label for="fileupload" class="btn btn-default">上传图片</label>
+                                    <input type="file" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic"
+                                        style="display: none">
+                                </div>
+                                <div class="form-group" id="imgBox">
+                                    <img src="./images/none.png" alt="" style="width: 100px; height: 100px;">
+                                    <input type="hidden" name="brandLogo">
+                                </div>
+                            </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel">取消</button>
